@@ -1,0 +1,14 @@
+{
+  "name": "express-middleware-assignment",
+  "version": "1.0.0",
+  "description": "API securing assignment using Express.js middleware.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "express-rate-limit": "^7.5.1"
+  }
+}

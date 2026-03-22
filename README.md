@@ -53,17 +53,3 @@ To test the security layers and evaluate the rubric, please use the following cr
 * **Password:** `password123`
 * **Access:** Navigate to `http://127.0.0.1:3000/dashboard` in a web browser.
 
-## Endpoints Overview
-
-* `/` : Automatically redirects to the `/dashboard`.
-* `/api/oil-prices` : Returns a static JSON object containing energy market data (Protected by Bearer Token).
-* `/dashboard` : Serves a simple HTML interface displaying the energy data (Protected by Basic Auth).
-* `/logout` : Clears the Basic Authentication session by forcing a 401 Unauthorized state, effectively logging the user out.
-
-## Middleware Architecture
-
-This server applies middleware in the following logical sequence to ensure maximum security:
-1. **IP Filtering:** Rejects any request not originating from `127.0.0.1` or `::1` with a 403 status.
-2. **CORS:** Restricts access strictly to local origins.
-3. **Rate Limiting:** Throttles traffic to a maximum of 10 requests per 1-minute window to prevent abuse.
-4. **Authentication:** Route-specific protection applying either Bearer or Basic auth depending on the endpoint.
